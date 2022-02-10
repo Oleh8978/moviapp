@@ -7,13 +7,21 @@ import { History } from 'history';
 import { errorsReducer } from  './errorHandler';
 import { loaderReducer } from "./loaderReducer";
 import { historyReducer } from './historyReducer/index';
+import { ageReducer } from "./ageReducer";
+import { moviesReducer } from "./getMoviesReducer";
+import { singleMovieReducer } from './getSingleMovieReducer'
+
+// sagas 
+import { moviesSagas } from './getMoviesReducer';
+import { singleMovieSagas } from './getSingleMovieReducer'; 
 
 // interfaces 
 import { IStore } from "./storeModel";
 
 export const rootSaga = function* () {
   yield all([
-
+    moviesSagas(),
+    singleMovieSagas()
   ]);
 };
 
@@ -23,4 +31,7 @@ export const rootReducer = (history: History): Reducer =>
     loader: loaderReducer,
     errors: errorsReducer,
     historyState: historyReducer,
+    age: ageReducer,
+    allMovies: moviesReducer,
+    singleMovie: singleMovieReducer,
   });

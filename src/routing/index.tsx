@@ -1,12 +1,14 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-
+import { connect  } from 'react-redux';
 
 // components
 import Loader from '../components/loader';
 
 // routing schema
 import RoutingSchema, { IRoute } from './schema';
+import { IStore } from '../controllers/storeModel';
+import { loaderReducer } from '../controllers/loaderReducer';
 
 // Render all routes
 const generateRoutes = (routes: IRoute[]) => {
@@ -40,7 +42,7 @@ interface Props {
 
 const Routing: React.FC<Props> = (props) => {
 
-  if (true) {
+  if (props.loader) {
     return (
       <Loader/>
     );
@@ -56,4 +58,10 @@ const Routing: React.FC<Props> = (props) => {
     );
   }
 
-export default Routing;
+
+export default connect(
+  (store: IStore) => ({
+    loader: store.loader.loader
+  }),
+  {},
+)(Routing);
