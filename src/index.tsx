@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import { ConnectedRouter } from 'connected-react-router';
 import { Provider } from 'react-redux';
 
 import App from './App';
 
 import reportWebVitals from './reportWebVitals';
+
+// History
+import history from './historyApi';
 
 // app config
 import { Config } from './config/api';
@@ -23,9 +26,11 @@ Config.init({
 
 ReactDOM.render(
   <Provider store={store}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    <ConnectedRouter history={history}>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </ConnectedRouter>
   </Provider>,
   document.getElementById('root')
 );
