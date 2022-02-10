@@ -4,11 +4,11 @@ import { connect  } from 'react-redux';
 
 // components
 import Loader from '../components/loader';
+import Header from '../components/header';
 
 // routing schema
 import RoutingSchema, { IRoute } from './schema';
 import { IStore } from '../controllers/storeModel';
-import { loaderReducer } from '../controllers/loaderReducer';
 
 // Render all routes
 const generateRoutes = (routes: IRoute[]) => {
@@ -50,6 +50,7 @@ const Routing: React.FC<Props> = (props) => {
 
   return (
         <>
+          <Header />
           <Switch>
             {Routes}
             <Redirect to={'/'} />

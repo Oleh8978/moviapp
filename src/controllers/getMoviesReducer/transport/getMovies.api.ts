@@ -7,12 +7,11 @@ import { IMoviesResponse } from '../models';
 import { IErrorResponse } from '../../storeModel';
 
 class API {
-  public async getMoviesList(
-    age = 18,
-  ): Promise<IMoviesResponse | IErrorResponse> {
+  public async getMoviesList({age = 18,
+    page = 1,}): Promise<IMoviesResponse | IErrorResponse> {
 
     let url = new URL(
-      Config.MAIN_ENDPOINT + 'discover/movie?api_key=' + Config.KEY + `&language=en-US&certification_country=US&certification=${urlCertificationFormer(age)}&include_adult=false&page=1&primary_release_date.lte=${new Date(new Date().getTime() - 60*60*24*365)}`,
+      Config.MAIN_ENDPOINT + 'discover/movie?api_key=' + Config.KEY + `&language=en-US&certification_country=US&sort_by=popularity.desc&certification=${urlCertificationFormer(age)}&include_adult=false&page=${page}&primary_release_date.lte=${new Date(new Date().getTime() - 60*60*24*365)}`,
     );
 
     return handleErrors(

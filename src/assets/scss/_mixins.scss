@@ -1,0 +1,16 @@
+@mixin itemTextMix {
+    font-family: $sfProDisplay;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: $text-inactive;
+  }
+
+  @mixin  buttonMix {
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }

@@ -9,7 +9,8 @@ import { loaderReducer } from "./loaderReducer";
 import { historyReducer } from './historyReducer/index';
 import { ageReducer } from "./ageReducer";
 import { moviesReducer } from "./getMoviesReducer";
-import { singleMovieReducer } from './getSingleMovieReducer'
+import { singleMovieReducer } from './getSingleMovieReducer';
+import { menuSelectItemReducer } from './menuIemReducer';
 
 // sagas 
 import { moviesSagas } from './getMoviesReducer';
@@ -34,4 +35,5 @@ export const rootReducer = (history: History): Reducer =>
     age: ageReducer,
     allMovies: moviesReducer,
     singleMovie: singleMovieReducer,
+    activeMenuItem: menuSelectItemReducer,
   });

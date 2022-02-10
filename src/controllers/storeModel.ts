@@ -5,6 +5,7 @@ import { IHistoryState } from './historyReducer/models';
 import { IAge } from './ageReducer/models';
 import { IMoviesResponse } from './getMoviesReducer/models';
 import { ISingleMovieState } from './getSingleMovieReducer/models';
+import { ISelectedItem } from './menuIemReducer/models';
 
 export interface IStore {
     router: RouterState;
@@ -14,6 +15,7 @@ export interface IStore {
     age: IAge;
     allMovies: IMoviesResponse;
     singleMovie: ISingleMovieState;
+    activeMenuItem: ISelectedItem;
 }
 
 export interface IErrorResponse {

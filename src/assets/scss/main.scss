@@ -1,6 +1,16 @@
 @import "common";
 @import "normalize";
 @import "colors";
+@import "fonts";
+@import "mixins";
+@import "constants";
 
 /* components */
 @import "components/spiner";
+@import "components/header";
+@import "components/button";
+@import "components/planet";
+@import "components/signIn";
+@import "components/search";
+@import "components/button";
+@import "components/mobileMenu";

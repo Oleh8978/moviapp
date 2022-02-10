@@ -21,7 +21,7 @@ export function*  moviesSaga({
   yield put(LoaderActions.setLoader({loader: true}));
 
   try {
-    const res: IMoviesResponse = yield (GeMoviesAPI.getMoviesList(payload));
+    const res: IMoviesResponse = yield (GeMoviesAPI.getMoviesList({...payload}));
     
     if (res) {
         yield put(getMoviesAction.success(res));

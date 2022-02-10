@@ -19,3 +19,8 @@ export interface IMovieDataPreview {
     vote_average: number,
     vote_count: number
 }
+
+export interface IPageDataRequest {
+    page: number,
+    age: number
+}
