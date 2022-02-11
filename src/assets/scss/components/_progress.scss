@@ -1,0 +1,43 @@
+.svg{
+    display: block;
+    max-width: 100%;
+}
+  
+.svg-circle-bg {
+    fill: none;
+}
+  
+.svg-circle {
+    fill: none;
+    
+}
+
+.svg-circle-text {
+    @include itemTextMix;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    text-anchor: middle;
+    fill: $white-color;
+
+}
+
+.progress {
+
+    &-wrapper {
+        background-color: $progress-background;
+        width:47px;
+        height: 47px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: 13px;
+        margin-top: -25px;
+
+    }
+}
+  

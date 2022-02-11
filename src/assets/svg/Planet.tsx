@@ -1,13 +1,17 @@
 import * as React from "react"
-import { SVGProps } from "react"
+import { SVGProps } from "react";
 
-const Planet = (props: SVGProps<SVGSVGElement>) => (
-  <svg
+import history from "../../historyApi";
+
+const Planet = (props: SVGProps<SVGSVGElement>) => {
+  return (
+    <svg
     width={55}
     height={32}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
+    onClick={() => {history.push('/')}}
     className="planet"
   >
     <path
@@ -15,6 +19,7 @@ const Planet = (props: SVGProps<SVGSVGElement>) => (
       fill="#4447E2"
     />
   </svg>
-)
+  )
+}
 
 export default Planet

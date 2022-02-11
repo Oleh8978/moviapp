@@ -46,9 +46,6 @@ const ToTop = (props: SVGProps<SVGSVGElement>) => {
             fill="#fff"
           />
         </mask>
-        <g mask="url(#a)">
-          <path fill="#4B4B62" d="M7 7h36v36H7z" />
-        </g>
       </svg>
     )
  

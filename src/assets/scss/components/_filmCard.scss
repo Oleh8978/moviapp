@@ -7,16 +7,53 @@
         height: 467px;
         border-radius: 15px;
         background-color: $dark-theme-second;
+        padding: 20px;
+        padding-top: 30px;
+        padding-bottom: 22px;
+        cursor: pointer;
 
         @media screen and (max-width: 950px) {
             width: 163px;
             height: 262px;
+            padding: 11px;
+            padding-top: 17px;
+            padding-bottom: 12px;
         }
 
         @media screen and (max-width: 375px) {
             width: 290px;
             height: 467px;
         }
+
+        &__top {
+            display: flex;
+            flex-direction: column;
+            height: fit-content;
+            width: fit-content;
+        }
+
+        &__bottom {
+            margin-top: -1px;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &-title {
+        @include itemTextMix;
+        color: $white-color;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    &-date {
+        @include itemTextMix;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
     }
 
 }

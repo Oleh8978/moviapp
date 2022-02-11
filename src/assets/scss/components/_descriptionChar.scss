@@ -1,0 +1,12 @@
+.description {
+    cursor: pointer;
+    margin-bottom: -32px;
+    z-index: 3;
+    margin-left: auto;
+    margin-right: 11px;
+
+    @media screen and (max-width: 950px) {
+        margin-right: 7px;
+        margin-bottom: -28px;
+    }
+}
