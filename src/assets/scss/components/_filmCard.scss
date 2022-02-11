@@ -1,0 +1,22 @@
+.film {
+
+    &-card {
+        display: flex;
+        flex-flow: column;
+        width: 290px;
+        height: 467px;
+        border-radius: 15px;
+        background-color: $dark-theme-second;
+
+        @media screen and (max-width: 950px) {
+            width: 163px;
+            height: 262px;
+        }
+
+        @media screen and (max-width: 375px) {
+            width: 290px;
+            height: 467px;
+        }
+    }
+
+}

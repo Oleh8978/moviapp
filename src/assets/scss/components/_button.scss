@@ -15,6 +15,14 @@
         margin-left: 16px;
     }
 
+    &_loadMore {
+        @include buttonMix;
+        border: 1px solid $button-border-color;
+        width: 248px;
+        height: 48px;
+        font-size: 16px;
+    }
+
     &-text {
         @include itemTextMix;
         color: $white-color;

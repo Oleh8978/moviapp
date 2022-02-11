@@ -1,0 +1,23 @@
+.footer {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    background-color: $dark-theme-second;
+    height: 78px;
+    min-height: 78px;
+    border-top: 2px solid $border-color;
+    margin-bottom: 0px;
+    margin-top: auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: 950px) {
+        display: none;
+    }
+
+    &-text {
+        @include itemTextMix;
+        font-size: 18px;
+    }
+}

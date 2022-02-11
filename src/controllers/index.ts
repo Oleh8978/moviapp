@@ -11,6 +11,8 @@ import { ageReducer } from "./ageReducer";
 import { moviesReducer } from "./getMoviesReducer";
 import { singleMovieReducer } from './getSingleMovieReducer';
 import { menuSelectItemReducer } from './menuIemReducer';
+import { pageReducer } from "./pageReducer";
+import { showScrollReducer } from './showScroller';
 
 // sagas 
 import { moviesSagas } from './getMoviesReducer';
@@ -36,4 +38,6 @@ export const rootReducer = (history: History): Reducer =>
     allMovies: moviesReducer,
     singleMovie: singleMovieReducer,
     activeMenuItem: menuSelectItemReducer,
+    page: pageReducer,
+    scroll: showScrollReducer,
   });

@@ -6,6 +6,8 @@ import { IAge } from './ageReducer/models';
 import { IMoviesResponse } from './getMoviesReducer/models';
 import { ISingleMovieState } from './getSingleMovieReducer/models';
 import { ISelectedItem } from './menuIemReducer/models';
+import { IPage } from './pageReducer/models';
+import { IShowScroller } from './showScroller/models';
 
 export interface IStore {
     router: RouterState;
@@ -16,6 +18,8 @@ export interface IStore {
     allMovies: IMoviesResponse;
     singleMovie: ISingleMovieState;
     activeMenuItem: ISelectedItem;
+    page: IPage,
+    scroll: IShowScroller
 }
 
 export interface IErrorResponse {

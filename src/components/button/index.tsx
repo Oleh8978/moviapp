@@ -4,6 +4,7 @@ interface IProps {
     onPress: () => void
     classProps: string;
     text: string
+    textProps?: string;
 }
 
 const Button: React.FC<IProps>  = (props) => {
@@ -12,7 +13,7 @@ const Button: React.FC<IProps>  = (props) => {
         className={`${props.classProps}`} 
         onClick={() => props.onPress()}
     >
-        <span className='button-text'>
+        <span className={`button-text ${props.textProps ? props.textProps : ''}`}>
             {props.text}
         </span>
     </div>
