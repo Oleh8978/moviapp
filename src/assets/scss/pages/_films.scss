@@ -88,6 +88,10 @@
         &__bottom {
             min-height: 597px;
             display: flex;
+
+            @media screen and (max-width: 950px) {
+                min-height: 351px;
+            }
         } 
     }
     
@@ -169,8 +173,7 @@
         min-height: 665px;
         display: flex;
         flex-direction: row;
-        background-color: rgb(53, 48, 48);
-        opacity: 0.95;
+        background-color: rgba(53, 48, 48, 0.95);
         padding-bottom: 86px;
 
         @media screen and (max-width: 1000px) {

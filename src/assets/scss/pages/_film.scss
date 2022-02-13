@@ -94,3 +94,106 @@
     }
 
 }
+
+.top {
+
+    &-rated {
+        margin-top: 71px;
+
+        padding-left: 110px;
+        margin-bottom: 131px;
+        display: flex;
+        overflow-x: scroll;
+
+        @media screen and (max-width: 950px) {
+            margin-top: 48px;
+            padding-left: 35px;
+            margin-bottom: 70px;
+        }
+
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+          
+        /* Hide scrollbar for IE, Edge and Firefox */
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+
+        &-casts {
+            @include itemTextMix;
+            display: flex;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 20px;
+            color: $white-color;
+            margin-bottom: 53px;
+
+            @media screen and (max-width: 950px) {
+                font-size: 16px;
+                margin-bottom: 33px;
+            }
+        }
+
+        &-actors {
+            display: flex;
+            flex-direction: row;
+        } 
+    }
+}
+
+.cast {
+    &-card {
+        display: flex;
+        flex-direction: column;
+        margin-right: 28px;
+
+        &-text {
+            &-wrapper {
+                margin-top: 22px;
+                display: flex;
+                flex-direction: column;
+
+                &__top {
+                    @include itemTextMix;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: $white-color;
+
+                    @media screen and (max-width: 950px) {
+                        font-size: 10px;
+                        line-height: 12px;
+                    }
+                }
+
+                &__bottom {
+                    @include itemTextMix;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: $certification-border-color;
+
+                    @media screen and (max-width: 950px) {
+                        font-size: 8px;
+                        line-height: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+    &-img {
+        width: 175px;
+        height: 250px;
+        border-radius: 15px;
+
+        @media screen and (max-width: 950px) {
+            width: 108px;
+            height: 155px;
+        }
+    } 
+}

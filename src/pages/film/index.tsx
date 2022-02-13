@@ -5,6 +5,7 @@ import { useDispatch, connect } from 'react-redux';
 import Footer from '../../components/footer';
 import Image from '../../components/imageOnError';
 import FilmHeader from '../../components/filmHeadData';
+import TopRated from '../../components/topRated';
 
 // actions
 import * as geMovieActions from '../../controllers/getSingleMovieReducer/actions';
@@ -62,7 +63,7 @@ const Film: React.FC<IProps>  = (props) => {
         </div>
       </div>
       <div className='films-single__bottom'>
-
+        <TopRated />
       </div>
       <Footer />
     </div>

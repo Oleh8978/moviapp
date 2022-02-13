@@ -9,16 +9,16 @@ export interface IProps {
 const Image: React.FC<IProps> = (props) => {
 
     const addDefaultSrc = (ev:any) => {
-        ev.target.src = '../../assets/images/testflix_logo.png';
+        ev.target.src = require('../../assets/images/error.png');
     };
 
     return (
       <>
         <img
-        onError={addDefaultSrc}
-        className={props.customClass ? props.customClass :'imgOnError'}
-        src={props.uri}
-        alt="img"
+          onError={addDefaultSrc}
+          className={props.customClass ? props.customClass :'imgOnError'}
+          src={props.uri}
+          alt="img"
         />
       </>
     )
