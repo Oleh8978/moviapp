@@ -22,6 +22,11 @@
     text-anchor: middle;
     fill: $white-color;
 
+    @media screen and (max-width: 950px) {
+        font-size: 7.85439px;
+        line-height: 11px;
+    }
+
 }
 
 .progress {
@@ -37,6 +42,13 @@
         margin-left: auto;
         margin-right: 13px;
         margin-top: -25px;
+
+        @media screen and (max-width: 950px) {
+            margin-right: 7px;
+            width:27px;
+            height: 27px;
+            margin-top: -15px;
+        }
 
     }
 }

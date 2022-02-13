@@ -2,6 +2,7 @@ import React from 'react';
 
 
 export interface IProps {
+  customClass?: string
   uri: string
 }
 
@@ -15,7 +16,7 @@ const Image: React.FC<IProps> = (props) => {
       <>
         <img
         onError={addDefaultSrc}
-        className={'imgOnError'}
+        className={props.customClass ? props.customClass :'imgOnError'}
         src={props.uri}
         alt="img"
         />

@@ -46,6 +46,15 @@
         font-weight: 500;
         font-size: 16px;
         line-height: 20px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+
+        @media screen and (max-width: 950px) {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 9px;
+        }
     }
 
     &-date {
@@ -54,6 +63,13 @@
         font-weight: normal;
         font-size: 14px;
         line-height: 20px;
+
+        @media screen and (max-width: 950px) {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 8px;
+            line-height: 11px;
+        }
     }
 
 }

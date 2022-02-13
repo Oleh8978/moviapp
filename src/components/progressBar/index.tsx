@@ -1,11 +1,17 @@
 import React, { useEffect, useState, useRef } from 'react';
 
+// custom hooks 
+import useWindowDimensions from '../../hooks/windwoSizeHook';
+
 interface IProps {
     size: number,
     progress: number,
     strokeWidth: number,
     circleOneStroke: string,
-    circleTwoStroke: string
+    circleTwoStroke: string,
+    customClass?: string,
+    customTextClass?: string,
+    customPudding?: number
 }
 
 const ProgressBar: React.FC<IProps>  = (props) => {
@@ -19,9 +25,22 @@ const ProgressBar: React.FC<IProps>  = (props) => {
         circleTwoStroke,
     } = props;
 
-    const center = size / 2;
-    const radius = size / 2 - strokeWidth / 2;
+    const { width, height } = useWindowDimensions()
+
+    const modifiedSize =  width > 950 ? size : size - 14
+
+    const center = modifiedSize / 2;
+    const radius = modifiedSize / 2 - strokeWidth / 2;
     const circumference = 2 * Math.PI * radius;
+
+    const puddingText = () => {
+
+        if (props.customPudding) {
+            return width > 950 ? props.customPudding : props.customPudding - 8
+        }
+
+        return width > 950 ? center + 5 : center + 2
+    }
 
     useEffect(() => {
         const progressOffset = ((100 - progress) / 100) * circumference;
@@ -33,11 +52,11 @@ const ProgressBar: React.FC<IProps>  = (props) => {
     }, [setOffset, progress, circumference, offset]);
 
     return (
-        <div className='progress-wrapper'>
-                        <svg
+        <div className={`${'progress-wrapper'} ${props.customClass ? props.customClass : ""}`}>
+            <svg
                 className="svg"
-                width={size}
-                height={size}
+                width={modifiedSize}
+                height={modifiedSize}
             >
                 <circle
                     className="svg-circle-bg"
@@ -45,7 +64,7 @@ const ProgressBar: React.FC<IProps>  = (props) => {
                     cx={center}
                     cy={center}
                     r={radius}
-                    strokeWidth={strokeWidth}
+                    strokeWidth={width > 950 ? strokeWidth : strokeWidth / 2}
                 />
                 <circle
                     className="svg-circle"
@@ -54,15 +73,15 @@ const ProgressBar: React.FC<IProps>  = (props) => {
                     cx={center}
                     cy={center}
                     r={radius}
-                    transform={`rotate(-90 ${size / 2} ${size / 2})`}
-                    strokeWidth={strokeWidth}
+                    transform={`rotate(-90 ${modifiedSize / 2} ${modifiedSize / 2})`}
+                    strokeWidth={width > 950 ? strokeWidth : strokeWidth / 2}
                     strokeDasharray={circumference}
                     strokeDashoffset={offset}
                 />
                 <text 
                     x={`${center}`} 
-                    y={`${center + 5}`} 
-                    className="svg-circle-text">
+                    y={`${puddingText()}`} 
+                    className={`${"svg-circle-text"} ${props.customTextClass ? props.customTextClass : ''}`}>
                         {progress}%
                 </text>
             </svg>

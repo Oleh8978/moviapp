@@ -57,6 +57,60 @@ export interface ISpokenLanguage {
 }
 
 export interface ISingleMovieState {
-    data: {} | ISingleMovieResponse
+    data: null | ISingleMovieResponse
+    credits: null | ICredit
+    releaseDates: null | IReleasesDates
+}
+
+export interface ICredit {
+    id: number,
+    cast: ICast[]
+    crew: ICrew[]
+}
+
+export interface ICast {
+    adult: boolean,
+    gender: number,
+    id: number,
+    known_for_department: string,
+    name: string,
+    original_name: string,
+    popularity: number,
+    profile_path: string,
+    cast_id: number,
+    character: string,
+    credit_id: string,
+    order: number
+}
+
+export interface IReleasesDates {
+    id: number,
+    results: IRelease[]
+}
+
+export interface IRelease {
+    iso_3166_1: string,
+    release_dates: IReleaseDate[]
+}
+
+export interface IReleaseDate {
+    certification: string,
+    iso_639_1: string,
+    release_date: Date,
+    type: number
+}
+
+export interface ICrew {
+    adult: boolean,
+    gender: number
+    id: number,
+    known_for_department: string,
+    name: string,
+    original_name: string,
+    popularity: number,
+    profile_path: string | null,
+    credit_id: string,
+    department: string,
+    job: string
 }
     

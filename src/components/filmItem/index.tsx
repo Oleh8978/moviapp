@@ -1,5 +1,11 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+
+// history
 import history from '../../historyApi';
+
+// actions
+import * as singlePageMovieActions from '../../controllers/getSingleMovieReducer/actions';
 
 // components
 import Image from '../imageOnError';
@@ -18,12 +24,17 @@ interface IProps {
 }
 
 const FilmIem: React.FC<IProps>  = (props) => {
+  const dispatch = useDispatch();
   return (
     <div 
       className="film-card"
-      onClick={() => history.push(`/movie/${props.data.id}`)}
+      onClick={() => {
+        dispatch(singlePageMovieActions.getMovieAction.success(null));
+        dispatch(singlePageMovieActions.getCreditsAction.success(null))
+        dispatch(singlePageMovieActions.getReleaseDates.success(null))
+        history.push(`/movie/${props.data.id}`)
+      }}
     >
-
       <div className='film-card__top'>
         <DescriptionChar />
         <Image uri={`https://www.themoviedb.org/t/p/w440_and_h660_face${props.data.poster_path}`} />

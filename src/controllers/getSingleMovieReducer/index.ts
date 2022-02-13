@@ -20,7 +20,9 @@ export const singleMovieSagas = function* () {
 
 /* Reducer */
 const initialState: ISingleMovieState = {
-    data: {}
+    data: null,
+    credits: null,
+    releaseDates: null
 };
 
 export const singleMovieReducer = createReducer<ISingleMovieState, MovieType>(
@@ -30,7 +32,21 @@ export const singleMovieReducer = createReducer<ISingleMovieState, MovieType>(
     actions.getMovieAction.success,
     (state: ISingleMovieState, { payload }): ISingleMovieState => ({
       ...state,
-      ...payload
+      data: payload
     })
-  );
+  )
+  .handleAction(
+    actions.getCreditsAction.success,
+    (state: ISingleMovieState, { payload }): ISingleMovieState => ({
+      ...state,
+      credits: payload
+    })
+  )
+  .handleAction(
+    actions.getReleaseDates.success,
+    (state: ISingleMovieState, { payload }): ISingleMovieState => ({
+      ...state,
+      releaseDates: payload
+    })
+  )
   
