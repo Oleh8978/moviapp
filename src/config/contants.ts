@@ -1,1 +1,0 @@
-export const appName = 'MOVIE_APP';
